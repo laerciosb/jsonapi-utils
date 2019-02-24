@@ -60,7 +60,7 @@ module JSONAPI
         def build_error(field, message, index = 0)
           error = error_base
             .merge(
-              id: id_member(field, index),
+              # id: id_member(field, index),
               title: message,
               detail: detail_member(field, message)
             ).merge(source_member(field))
