@@ -147,8 +147,7 @@ module JSONAPI
         # @api private
         def detail_member(field, message)
           return message if field == :base
-          resource_key = resource_key_for(field)
-          [translation_for(resource_key), message].join(' ')
+          [resource_key_for(field), message].join(' - ')
         end
 
         # Return the resource's attribute or relationship key name for a given field name.
