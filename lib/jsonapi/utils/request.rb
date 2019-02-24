@@ -20,6 +20,8 @@ module JSONAPI::Utils
         key_formatter: key_formatter,
         server_error_callbacks: (self.class.server_error_callbacks || [])
       )
+    rescue => e
+      @request = e
     end
 
     # Render an error response if the parsed request got any error.
