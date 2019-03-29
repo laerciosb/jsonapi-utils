@@ -76,7 +76,8 @@ module JSONAPI
         def active_record_obj?(object)
           defined?(ActiveRecord::Base) &&
             (object.is_a?(ActiveRecord::Base) ||
-            object.singleton_class.include?(ActiveModel::Model))
+            object.singleton_class.include?(ActiveModel::Model) ||
+            object.singleton_class.include?(ActiveModel::Validations::HelperMethods))
         end
 
         # Build the full response document.
